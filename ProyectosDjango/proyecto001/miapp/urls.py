@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import cursos, crear_curso, carreras, crear_carrera, index, eliminar_curso, registrar_curso
-
+from .views import eliminar_carrera, registrar_carrera
 urlpatterns = [
     path('cursos/', cursos, name='cursos'),
     path('crear_curso/', crear_curso, name='crear_curso'),
@@ -10,4 +10,7 @@ urlpatterns = [
     # ... otras rutas de la aplicación ...
     path('eliminarcurso/<int:idcourse>/',eliminar_curso, name='eliminar_curso'),
     path('registrarCurso/', registrar_curso, name='registrar_curso'),
+    # Nuevas rutas para carreras
+    path('eliminarcarrera/<int:idcareer>/', eliminar_carrera, name='eliminar_carrera'),
+    path('registrarcarrera/', registrar_carrera, name='registrar_carrera'),
 ]
